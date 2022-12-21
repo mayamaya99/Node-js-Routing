@@ -8,7 +8,7 @@ let serveAsEntryPoint = (response) => {
 };
 // page two
 let serveNextPage = (response) => {
-  response.writeHead(200, { "content-Type": "text/html" });
+  response.writeHead(200, { "content-Type": "text/html" });// code 200 all good
   response.write("<h2>This is Next page of this app.</h2>");
   response.write("<a href ='/'>Main Page  </a>");
   response.end();
@@ -19,7 +19,7 @@ let send404Error = (response) => {
   response.end("What you asked for can not be found.");
 };
 let onRequest = (request, response) => {
-  if (request.method == "GET" && request.url == "/") {
+  if (request.method == "GET" && request.url == "/") { // return url & GET
     serveAsEntryPoint(response);
   } else if (request.method == "GET" && request.url == "/nextpage")
     serveNextPage(response);
