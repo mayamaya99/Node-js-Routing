@@ -2,7 +2,8 @@ const http = require("http");
 
 let onRequest = (request, response) => {
   // condition
-  if (request.method == `GET` && request.url == "/") {
+    if (request.method == `GET` && request.url == "/") {
+// if request is root then log the following
     console.log("user request");
     console.log(request.url);
     console.log(request.method);
