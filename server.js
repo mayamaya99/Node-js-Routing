@@ -7,7 +7,7 @@ let serveAsEntryPoint = (response) => {
   response.end();
 };
 // page two
-let serveNextPage = (response) => {
+let serveToSecondPage = (response) => {
   response.writeHead(200, { "content-Type": "text/html" });// code 200 all good
   response.write("<h2>This is Next page of this app.</h2>");
   response.write("<a href ='/'>Main Page  </a>");
@@ -22,7 +22,7 @@ let onRequest = (request, response) => {
   if (request.method == "GET" && request.url == "/") { // return url & GET
     serveAsEntryPoint(response);
   } else if (request.method == "GET" && request.url == "/nextpage")
-    serveNextPage(response);
+    serveToSecondPage(response);
   else {
     send404Error(response);
   }
